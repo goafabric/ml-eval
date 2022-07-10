@@ -106,4 +106,4 @@ plotPrediction(clf_petal_10, X_train_petal_only[:, 0], X_train_petal_only[:, 1],
                'Petal length', 'Petal width', y_train,
                title="Simple model looks good for Train Data")
 
-#plt.show()
+plt.show()
