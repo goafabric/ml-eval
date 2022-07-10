@@ -26,8 +26,8 @@ clf.fit(X_train, y_train)
 
 #predict a concrete example
 p = clf.predict([[6.3, 2.7, 5.5, 1.5]])
-print(p)
+print("preedict", p)
 
-print(clf.score(X_train, y_train))
+print("train score", clf.score(X_train, y_train))
 
-print(clf.score(X_test, y_test))
+print("test score", clf.score(X_test, y_test))
