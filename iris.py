@@ -6,12 +6,10 @@ X = iris.data
 #this is the classification data which can be 0,1,2 base on the 3 possible types
 y = iris.target
 
-#print(iris.DESCR)
-
-X_sepal_length = X[:, 0]
-X_sepal_width = X[:, 1]
-X_petal_length = X[:, 2]
-X_petal_width = X[:, 3]
+#X_sepal_length = X[:, 0]
+#X_sepal_width = X[:, 1]
+#X_petal_length = X[:, 2]
+#X_petal_width = X[:, 3]
 
 # split iris data into 60% training and 40% test data
 from sklearn.model_selection import train_test_split
@@ -30,4 +28,6 @@ clf.fit(X_train, y_train)
 p = clf.predict([[6.3, 2.7, 5.5, 1.5]])
 print(p)
 
-z = 5
+print(clf.score(X_train, y_train))
+
+print(clf.score(X_test, y_test))
