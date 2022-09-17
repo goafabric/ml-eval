@@ -21,20 +21,20 @@ print(X_train.shape, y_train.shape, X_test.shape, y_test.shape)
 from sklearn import neighbors
 clf = neighbors.KNeighborsClassifier(1)
 
-#train the model
+# train the model
 clf.fit(X_train, y_train)
 
-#predict a concrete example
+# predict a concrete example
 p = clf.predict([[6.3, 2.7, 5.5, 1.5]])
 print("preedict", p)
 print("")
 
-#normal scores
+# normal scores
 print("normal train score", clf.score(X_train, y_train))
 print("normal test score", clf.score(X_test, y_test))
 print("")
 
-#training with sepal only
+# training with sepal only
 ###
 X_train_sepal_only = X_train[:, :2]
 X_test_sepal_only = X_test[:, :2]
@@ -46,7 +46,7 @@ print("sepal only train score: ", clf_sepal_10.score(X_train_sepal_only, y_train
 print("sepal only test score: ",clf_sepal_10.score(X_test_sepal_only, y_test))
 print("")
 
-#training with petal only
+# training with petal only
 X_train_petal_only = X_train[:, 2:]
 X_test_petal_only = X_test[:, 2:]
 

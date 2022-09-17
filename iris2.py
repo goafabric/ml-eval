@@ -24,10 +24,10 @@ print(X_train.shape, y_train.shape, X_test.shape, y_test.shape)
 from sklearn import neighbors
 clf = neighbors.KNeighborsClassifier(1)
 
-#train the model
+# train the model
 clf.fit(X_train, y_train)
 
-#predict a concrete example
+# predict a concrete example
 p = clf.predict([[6.3, 2.7, 5.5, 1.5]])
 print("preedict", p)
 
