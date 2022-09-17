@@ -1,15 +1,15 @@
 # load iris data and load 0,1,2,4 from matrix/map
 from sklearn import datasets
 iris = datasets.load_iris()
-#this is the input data as a complex matrix with sepal + petal, width/length
+# this is the input data as a complex matrix with sepal + petal, width/length
 X = iris.data
-#this is the classification data which can be 0,1,2 base on the 3 possible types
+# this is the classification data which can be 0,1,2 base on the 3 possible types
 y = iris.target
 
-#X_sepal_length = X[:, 0]
-#X_sepal_width = X[:, 1]
-#X_petal_length = X[:, 2]
-#X_petal_width = X[:, 3]
+# X_sepal_length = X[:, 0]
+# X_sepal_width = X[:, 1]
+# X_petal_length = X[:, 2]
+# X_petal_width = X[:, 3]
 
 # split iris data into 60% training and 40% test data
 from sklearn.model_selection import train_test_split
