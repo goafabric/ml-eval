@@ -7,10 +7,18 @@ def read_file():
                        names=['sepal length', 'sepal width', 'petal length', 'petal width', 'class'])
 
 
+def calculate_missing_sepal():
+    iris_versicolor = df[df['class'] == 'Iris-versicolor']
+    mean_sepal_width = pd.Series.mean(iris_versicolor['sepal width'])
+    df.loc[82, 'sepal width'] = mean_sepal_width
+
+
 df = read_file()
 
-# print(df)
+print('looking for missing sepal')
+print(df.count())
+print(df[df['sepal width'].isnull()])
 
-print(df.head())
-
+print('correcting missing')
+calculate_missing_sepal()
 print(df.count())
