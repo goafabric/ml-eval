@@ -33,6 +33,16 @@ def eliminate_typo():
     print(df.groupby('class').count())
 
 
+def convert_from_mm(row):
+    return panda.to_numeric(row['petal width'].replace(' mm', '')) / 10
+
+
+def normalize_measures():
+    print(df.head())
+    df['petal width'] = df.apply(convert_from_mm, axis='columns')
+    print(df.head())
+
+
 df = read_file()
 
 search_missing_sepal()
@@ -41,5 +51,5 @@ calculate_missing_sepal()
 eliminate_duplicate()
 eliminate_typo()
 
-# measures
-print(df.head())
+normalize_measures()
+
