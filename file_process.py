@@ -53,3 +53,8 @@ eliminate_typo()
 
 normalize_measures()
 
+print(df.describe())
+
+X_train = df.values[:, 0:4]
+
+print(X_train)
