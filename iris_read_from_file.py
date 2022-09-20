@@ -1,19 +1,10 @@
 import pandas as panda
-from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn import neighbors
 
 
 def read_file():
     return panda.read_csv('doc/iris_cleansed.csv')
-
-
-def convert_from_mm(row):
-    return panda.to_numeric(row['class']
-                            .replace('Iris-setosa', '0')
-                            .replace('Iris-versicolor', '1')
-                            .replace('Iris-virginica', '2')
-                            )
 
 
 df = read_file()
