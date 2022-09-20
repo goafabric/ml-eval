@@ -21,20 +21,25 @@ def calculate_missing_sepal():
     print(df.count())
 
 
+def eliminate_duplicate():
+    print(df[df.duplicated(keep=False)])
+    print(df.groupby('class').count())
+    df.drop(df.index[[100]])
+
+
+def eliminate_typo():
+    typo_idx = df[df['class'] == 'Iris-setsoa'].index
+    df.loc[typo_idx, 'class'] = 'Iris-setosa'
+    print(df.groupby('class').count())
+
+
 df = read_file()
+
 search_missing_sepal()
 calculate_missing_sepal()
 
-
-# duplicates
-print(df[df.duplicated(keep=False)])
-print(df.groupby('class').count())
-df = df.drop(df.index[[100]])
-
-# typos
-typo_idx = df[df['class'] == 'Iris-setsoa'].index
-df.loc[typo_idx, 'class'] = 'Iris-setosa'
-print(df.groupby('class').count())
+eliminate_duplicate()
+eliminate_typo()
 
 # measures
 print(df.head())
