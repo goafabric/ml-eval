@@ -2,6 +2,7 @@
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn import neighbors
+
 iris = datasets.load_iris()
 # this is the input data as a complex matrix with sepal + petal, width/length
 X = iris.data
