@@ -53,4 +53,16 @@ eliminate_typo()
 
 normalize_measures()
 
+#hist
 print(df.describe())
+
+df.hist()
+df.groupby('class').describe()
+df.groupby('class').hist()
+
+#seaborn
+#import seaborn as sns
+#sns.jointplot(df['sepal length'], df['petal length'])
+
+
+
