@@ -8,8 +8,17 @@ def read_file():
     return panda.read_csv('doc/iris_cleansed.csv')
 
 
+def convert_from_mm(row):
+    return panda.to_numeric(row['class']
+                            .replace('Iris-setosa', '0')
+                            .replace('Iris-versicolor', '1')
+                            .replace('Iris-virginica', '2')
+                            )
+
+
 df = read_file()
 
+# df.apply(convert_from_mm, axis='columns')
 
 X = df.values[:, 0:4]
 y = df.values[:, 4:5]
