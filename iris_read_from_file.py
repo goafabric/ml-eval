@@ -22,4 +22,9 @@ clf = neighbors.KNeighborsClassifier(1)
 clf.fit(X_train, y_train.ravel())
 
 p = clf.predict([[6.3, 2.7, 5.5, 1.5]])
+
+print("normal train score", clf.score(X_train, y_train))
+print("normal test score", clf.score(X_test, y_test))
+print("")
 print("preedict", p)
+
