@@ -1,5 +1,5 @@
 import pandas as panda
-
+import matplotlib.pylab as plt
 
 def read_file():
     return panda.read_csv('doc/iris_dirty.csv',
@@ -56,13 +56,23 @@ normalize_measures()
 #hist
 print(df.describe())
 
-df.hist()
-df.groupby('class').describe()
+
+df.hist(figsize=(15, 15))
+# plt.show()
+
+# df.groupby('class').describe()
 df.groupby('class').hist()
+# plt.show()
 
 #seaborn
-#import seaborn as sns
-#sns.jointplot(df['sepal length'], df['petal length'])
+import seaborn as sns
+# sns.jointplot(df['sepal length'], df['petal length'])
+# plt.show()
+
+
+corrmat = df.corr()
+sns.heatmap(corrmat, annot=True)
+# plt.show()
 
 
 
