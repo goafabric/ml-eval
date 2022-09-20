@@ -4,24 +4,24 @@ from sklearn import neighbors
 
 
 def read_file():
-    return panda.read_csv('doc/body_size_short.csv')
+    return panda.read_csv('doc/body_size.csv')
 
 
 def train_me():
-    X = df.values[:, 0:1]
-    y = df.values[:, 1:2]
-    x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.5)
+    values = df.values[:, 0:1]
+    target = df.values[:, 1:2]
+    values_train, values_test, target_train, target_test = train_test_split(values, target, test_size=0.4)
     clf = neighbors.KNeighborsClassifier(1)
-    clf.fit(x_train, y_train.ravel())
+    clf.fit(values_train, target_train.ravel())
 
-    print("normal train score", clf.score(x_train, y_train))
-    print("normal test score", clf.score(x_test, y_test))
+    print("normal train score", clf.score(values_train, target_train))
+    print("normal test score", clf.score(values_test, target_test))
     return clf
 
 
 df = read_file()
 clfn = train_me()
-p = clfn.predict([[54]])
+p = clfn.predict([[180]])
 
 print("preedict", p)
 
