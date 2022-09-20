@@ -1,10 +1,10 @@
-import pandas as pd
+import pandas as panda
 
 
 def read_file():
-    return pd.read_csv('doc/iris_dirty.csv',
-                       header=None,
-                       names=['sepal length', 'sepal width', 'petal length', 'petal width', 'class'])
+    return panda.read_csv('doc/iris_dirty.csv',
+                          header=None,
+                          names=['sepal length', 'sepal width', 'petal length', 'petal width', 'class'])
 
 
 def search_missing_sepal():
@@ -16,7 +16,7 @@ def search_missing_sepal():
 def calculate_missing_sepal():
     print('correcting missing')
     iris_versicolor = df[df['class'] == 'Iris-versicolor']
-    mean_sepal_width = pd.Series.mean(iris_versicolor['sepal width'])
+    mean_sepal_width = panda.Series.mean(iris_versicolor['sepal width'])
     df.loc[82, 'sepal width'] = mean_sepal_width
     print(df.count())
 
@@ -24,3 +24,17 @@ def calculate_missing_sepal():
 df = read_file()
 search_missing_sepal()
 calculate_missing_sepal()
+
+
+# duplicates
+print(df[df.duplicated(keep=False)])
+print(df.groupby('class').count())
+df = df.drop(df.index[[100]])
+
+# typos
+typo_idx = df[df['class'] == 'Iris-setsoa'].index
+df.loc[typo_idx, 'class'] = 'Iris-setosa'
+print(df.groupby('class').count())
+
+# measures
+print(df.head())
