@@ -28,7 +28,7 @@ y = df.values[:, 4:5]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4)
 
 clf = neighbors.KNeighborsClassifier(1)
-clf.fit(X_train, y_train)
+clf.fit(X_train, y_train.ravel())
 
 p = clf.predict([[6.3, 2.7, 5.5, 1.5]])
 print("preedict", p)
