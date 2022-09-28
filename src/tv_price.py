@@ -23,7 +23,7 @@ def train_me(file):
 
 df = read_file()
 classifier = train_me(read_file())
-prediction = classifier.predict([[6449, 14]])
+prediction = classifier.predict([[14, 6449]])
 
 print("preedict", prediction)
 
