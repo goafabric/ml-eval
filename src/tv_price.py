@@ -8,8 +8,8 @@ def read_file():
 
 
 def train_me(file):
-    values = file.values[:, 0:1]
-    target = file.values[:, 1:2]
+    values = file.values[:, 0:2]
+    target = file.values[:, 2:3]
 
     values_train, values_test, target_train, target_test = train_test_split(values, target, test_size=0.4)
 
@@ -23,7 +23,7 @@ def train_me(file):
 
 df = read_file()
 classifier = train_me(read_file())
-prediction = classifier.predict([[36]])
+prediction = classifier.predict([[6449, 14]])
 
 print("preedict", prediction)
 
