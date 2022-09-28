@@ -7,10 +7,11 @@ def read_file():
     return panda.read_csv('doc/tv_price.csv')
 
 
-def train_me():
-    values = df.values[:, 0:1]
-    target = df.values[:, 1:2]
+def train_me(file):
+    values = file.values[:, 0:1]
+    target = file.values[:, 1:2]
     values_train, values_test, target_train, target_test = train_test_split(values, target, test_size=0.4)
+
     clf = neighbors.KNeighborsClassifier(1)
     clf.fit(values_train, target_train.ravel())
 
@@ -20,8 +21,8 @@ def train_me():
 
 
 df = read_file()
-clfn = train_me()
-p = clfn.predict([[36]])
+classifier = train_me(read_file())
+prediction = classifier.predict([[36]])
 
-print("preedict", p)
+print("preedict", prediction)
 
