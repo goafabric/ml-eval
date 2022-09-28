@@ -10,6 +10,7 @@ def read_file():
 def train_me(file):
     values = file.values[:, 0:1]
     target = file.values[:, 1:2]
+
     values_train, values_test, target_train, target_test = train_test_split(values, target, test_size=0.4)
 
     clf = neighbors.KNeighborsClassifier(1)
