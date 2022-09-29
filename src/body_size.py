@@ -4,7 +4,7 @@ from sklearn import neighbors
 
 
 def read_file():
-    return panda.read_csv('csv/body_size.csv')
+    return panda.read_csv('../csv/body_size.csv')
 
 
 def train_me():
