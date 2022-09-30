@@ -1,6 +1,8 @@
 import pandas as panda
 from sklearn.model_selection import train_test_split
 from sklearn import neighbors
+import matplotlib.pylab as plt
+import seaborn as sns
 
 
 def read_file():
@@ -21,10 +23,20 @@ def train_me(file):
     return clf
 
 
-classifier = train_me(read_file())
+df = read_file()
+classifier = train_me(df)
 prediction = classifier.predict([[14, 3599]])
 
 print("preedict 4599: ", classifier.predict([[14, 4599]]))
 print("preedict 2599: ", classifier.predict([[14, 2599]]))
 print("preedict 620: ", classifier.predict([[6, 620]]))
 
+
+#print(df.describe())
+
+#df.hist(figsize=(10, 10))
+#plt.show()
+
+#corrmat = df.corr()
+#sns.heatmap(corrmat, annot=True)
+#plt.show()
