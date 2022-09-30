@@ -27,4 +27,5 @@ prediction = classifier.predict([[14, 3599]])
 
 print("preedict 4599: ", classifier.predict([[14, 4599]]))
 print("preedict 2599: ", classifier.predict([[14, 2599]]))
+print("preedict 620: ", classifier.predict([[6, 620]]))
 
