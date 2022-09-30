@@ -2,7 +2,7 @@ import pandas as panda
 import matplotlib.pylab as plt
 
 def read_file():
-    return panda.read_csv('csv/iris_dirty.csv',
+    return panda.read_csv('../../csv/iris_dirty.csv',
                           header=None,
                           names=['sepal length', 'sepal width', 'petal length', 'petal width', 'class'])
 
