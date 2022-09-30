@@ -4,7 +4,7 @@ from sklearn import neighbors
 
 
 def read_file():
-    return panda.read_csv('../csv/tv_price.csv')
+    return panda.read_csv('../csv/tv_price_fake.csv')
 
 
 def train_me(file):
@@ -23,7 +23,8 @@ def train_me(file):
 
 df = read_file()
 classifier = train_me(read_file())
-prediction = classifier.predict([[14, 6449]])
+prediction = classifier.predict([[14, 3599]])
 
-print("preedict", prediction)
+print("preedict 4599: ", classifier.predict([[14, 4599]]))
+print("preedict 2599: ", classifier.predict([[14, 2599]]))
 
