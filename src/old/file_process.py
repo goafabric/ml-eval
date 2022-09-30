@@ -72,7 +72,7 @@ import seaborn as sns
 
 corrmat = df.corr()
 sns.heatmap(corrmat, annot=True)
-# plt.show()
+plt.show()
 
 
 
