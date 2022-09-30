@@ -22,7 +22,6 @@ def train_me(file):
 
 
 classifier = train_me(read_file())
-p = classifier.predict([[180]])
 
-print("preedict", p)
+print("preedict 180: ", classifier.predict([[180]]))
 
