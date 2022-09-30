@@ -21,7 +21,6 @@ def train_me(file):
     return clf
 
 
-df = read_file()
 classifier = train_me(read_file())
 prediction = classifier.predict([[14, 3599]])
 

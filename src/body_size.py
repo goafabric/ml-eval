@@ -7,9 +7,9 @@ def read_file():
     return panda.read_csv('../csv/body_size.csv')
 
 
-def train_me():
-    values = df.values[:, 0:1]
-    target = df.values[:, 1:2]
+def train_me(file):
+    values = file.values[:, 0:1]
+    target = file.values[:, 1:2]
 
     values_train, values_test, target_train, target_test = train_test_split(values, target, test_size=0.4)
 
@@ -21,9 +21,8 @@ def train_me():
     return clf
 
 
-df = read_file()
-clfn = train_me()
-p = clfn.predict([[180]])
+classifier = train_me(read_file())
+p = classifier.predict([[180]])
 
 print("preedict", p)
 
