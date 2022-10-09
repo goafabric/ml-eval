@@ -1,8 +1,6 @@
 import pandas as panda
 from sklearn.model_selection import train_test_split
 from sklearn import neighbors
-import matplotlib.pylab as plt
-import seaborn as sns
 
 
 def read_file():
@@ -26,16 +24,4 @@ def train_me(file):
 df = read_file()
 classifier = train_me(df)
 
-print("preedict 180: ", classifier.predict([[180]]))
-
-#print(df.describe())
-
-#df.hist(figsize=(5, 5))
-#plt.show()
-
-#df.groupby('type').hist()
-#plt.show()
-
-#corrmat = df.corr()
-#sns.heatmap(corrmat, annot=True)
-#plt.show()
+print("preedict 180: ", classifier.predict([[130]]))
