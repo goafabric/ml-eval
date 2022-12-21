@@ -9,5 +9,3 @@ curl https://bootstrap.pypa.io/get-pip.py | python3
 pip install numpy scipy matplotlib ipython scikit-learn pandas
 
 # intellij plugin python community edition
-
-yo
