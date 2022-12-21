@@ -8,4 +8,6 @@ curl https://bootstrap.pypa.io/get-pip.py | python3
 # required libraries
 pip install numpy scipy matplotlib ipython scikit-learn pandas
 
-# intellij plugin python community edition 
+# intellij plugin python community edition
+
+yo
