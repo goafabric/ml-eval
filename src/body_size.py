@@ -24,4 +24,4 @@ def train_me(file):
 df = read_file()
 classifier = train_me(df)
 
-print("preedict: ", classifier.predict([[180]]))
+print("preedict: ", classifier.predict([[173]]))
